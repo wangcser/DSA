@@ -4,7 +4,7 @@ import sys
 def template(md_name):
     file_name = md_name + ".md"
     md_title = "# " + md_name + "\n"
-    md_path = "./" + file_name
+    md_path = "./easy/" + file_name
 
     with open("./template.md", 'r') as f:
         md_body = f.read()
@@ -15,9 +15,9 @@ def template(md_name):
 
     print('generate file: ', md_path)
 
-    
+
 if __name__ == "__main__":
-    
+
     # parser args.
     script_name = sys.argv[0]
     if len(sys.argv) > 1:
