@@ -2,13 +2,16 @@ import sys
 
 
 def template(md_name):
+    # file define
     file_name = md_name + ".md"
     md_title = "# " + md_name + "\n"
-    md_path = "./easy/" + file_name
+    md_path = "./" + file_name
 
+    # read template
     with open("./template.md", 'r') as f:
         md_body = f.read()
 
+    # write template
     with open(md_path, 'w') as f:
         f.write(md_title)
         f.write(md_body)
