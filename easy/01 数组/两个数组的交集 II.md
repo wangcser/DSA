@@ -27,6 +27,10 @@
   - 删除原来list中的元素
 - 性能：短的list遍历完成后结束（提前终止）
 
+
+
+下面是使用 map 的结果
+
 ## 03 题解
 
 ### 3.1 C++
@@ -34,6 +38,29 @@
 ```c++
 //version 1.0
 
+class Solution {
+public:
+    vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+        
+        vector<int> result;
+        unordered_map<int, int> m;
+        
+        // you should init the map
+        for(auto n1 : nums1) {
+            if(m.count(n1) > 0) m[n1]++;
+            else m[n1] = 1;
+        }
+        
+        for(auto n2 : nums2) {
+            if(m.count(n2) > 0 && m[n2] > 0) {
+                result.push_back(n2);
+                m[n2]--;
+            }
+        }
+        
+        return result;
+    }
+};
 ```
 
 
