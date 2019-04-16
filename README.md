@@ -1,10 +1,10 @@
 # DSA Notes
 
-This repo. use to record my algo. notes in leetcode and DSA lessons.
+This repo. use to record my algo. notes in leetcode, OJ and DSA lessons.
 
-## Classification
+## 1. DSA Classification
 
-According to algorithm design and algorithm analysis technicals, i group my notes in those orders:
+According to algorithm design and algorithm analysis technicals, i group my notes in those orders as follow:
 
 - leetcode rank:
   - easy
@@ -30,6 +30,12 @@ According to algorithm design and algorithm analysis technicals, i group my note
 - others
   - math
   - sort
+
+## Content
+
+
+
+
 
 ## Script
 
