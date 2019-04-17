@@ -133,6 +133,59 @@ public:
 };
 ```
 
+```c++
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        
+        if(head == NULL || n == 0) return NULL;
+        
+        ListNode* slow = head; 
+        ListNode* fast = head;
+        
+        for(int i = 1; i <= n; i++) {
+            if(fast != NULL) {
+                fast = fast->next;
+            } else {
+                return NULL;
+            }
+        }
+        
+        if(fast == NULL) {
+            ListNode* tmp = head;
+            head = head->next;
+            delete tmp;
+            return head;
+        }
+
+        while(fast->next != NULL) {
+            fast = fast->next;
+            slow = slow->next;
+        }
+
+        // slow is pre node of node to be delete
+        delNode(slow);
+        
+        return head;
+    }
+    
+    void delNode(ListNode* cur) {
+        // delete cur->next
+        ListNode* tmp = cur->next;
+        cur->next = cur->next->next;
+        delete tmp;
+    }
+};
+```
+
 
 
 ### 3.2 Python 3
