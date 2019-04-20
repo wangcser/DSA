@@ -1,0 +1,3 @@
+﻿  resultTest.cpp
+f:\supernotebook\leetcode\sort\test\sortalgo\resulttest.cpp(8): warning C4018: “<”: 有符号/无符号不匹配
+  sortAlgo.vcxproj -> F:\SuperNoteBook\Leetcode\sort\test\sortAlgo\Debug\sortAlgo.exe
