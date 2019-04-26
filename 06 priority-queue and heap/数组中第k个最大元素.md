@@ -29,6 +29,12 @@
 
 或者自己排序找，任何排序算法都能实现，题解给出的是快排
 
+- 排序
+- 小顶堆
+- 快排
+
+
+
 ## 03 题解
 
 ### 3.1 C++
@@ -46,6 +52,25 @@ public:
     }
 };
 ```
+
+```
+class Solution {
+public:
+    priority_queue<int, vector<int>, greater<int>> minHeap;
+    
+    int findKthLargest(vector<int>& nums, int k) {
+        for(auto num : nums) {
+            minHeap.push(num);
+            if(minHeap.size() > k)
+                minHeap.pop();
+        }
+        
+        return minHeap.top();
+    }
+};
+```
+
+
 
 ### 3.2 Python 3
 
