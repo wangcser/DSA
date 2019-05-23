@@ -188,3 +188,40 @@ int main() {
     s.size();
     s.pop();
 }
+
+bool dfs(Node* cur, Node* target, unordered_map<Node*, bool> visited) {
+    if(cur == target) return true;
+
+    for(auto next : cur->nexts) {
+        if(visited[next] = false) {
+            visited[next] = true;
+            return dfs(next, target, visited);
+        }
+    }
+
+    return false;
+}
+
+bool dfs(Node* root, Node* target) {
+    set<Node*> visited;
+    stack<Node*> s;
+    
+    s.push(root);
+    visited.insert(root);
+
+    while(!s.empty()) {
+        Node* cur = s.top();
+        //visit top
+        if(cur == target) return true;
+        
+        for(auto next : cur->nexts) {
+            if(visited.find(next) ！= visited.end()) {
+                s.push(next);
+                visited.insert(next);
+            }
+        }
+
+        s.pop();
+    }
+    return false;
+}
