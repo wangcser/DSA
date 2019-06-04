@@ -42,17 +42,128 @@
 
 ## 02 输入分析
 
+```
+0
+01
+01 10
+0110 1001
+01101001 1010110
+```
 
+- 当前行由上一行及其取反行组成
 
 ## 03 解题思路
 
 ### 3.1 基础思路
 
+#### 数的规模，模拟
 
+- 利用上面发现的规律，我们需要：
+  - 记录当前行的数位数量
+  - 当前行取反
+  - 取某个数位 与运算
+
+基于这个思路我们可以模拟如下：
+
+```c++
+class Solution {
+public:
+    int kthGrammar(int N, int K) {
+        int ans = 1;
+        int size = 2;
+        
+        for(int i = 1; i < N; i++) {
+            int left = ans;
+            int right = (1 << size) - 1 - ans;
+            
+            ans = (left << size) + right;
+            size *= 2;
+            
+            // cout<<left<<" "<<right<<" "<<ans<<endl;
+        }
+        
+        // return ans;
+        return (ans >> (size - K)) % 2;
+    }
+};
+```
+
+出现的问题：
+
+- 溢出问题，输入 30 后就出现了移位操作无法进行的问题，因此我们需要直接计算 K 的表示
+- 需要注意的细节：
+  - 移位操作加括号，一般不出问题
+  - 取某个位先右移拿到个位，在取余，否则会出现进制问题
+
+#### 1 的规律，模拟
+
+#### top-down 递归，分析第 K 个数的生成过程
+
+- 对于第 N 行的第 K 个数，我们可以分析如下：
+  - 第 N 行的长度为 2^(N-1)
+  - 若 K <= N 行长度的一半 ，则其等于 N-1 行的第 K 个数
+  - 反之，则其等于 N - 1 行的第 N - K 个数取反
+
+```c++
+class Solution {
+public:
+    int kthGrammar(int N, int K) {
+        if(N == 1) return 0;
+        if(N == 2) return K == 1? 0 : 1;
+        
+        // 计算上一行的长度（本行长度折半）
+        int prevLen = (1 << (N - 1)) / 2;
+        
+        if(K <= prevLen)
+            // 位于前半段，则等价于上一行同样位置的值
+            return kthGrammar(N-1, K);
+        else
+            // 位于后半段，则等价于上一行相应位置的值取反
+            // 返回值非 0 即 1，因此直接用 1 去减即可
+            return 1 - kthGrammar(N-1, K-prevLen);
+    }
+};
+```
+
+- 这里需要注意的是，对于第 
 
 ### 3.2 算法优化
 
+1. 首先基于用例对第 N 行进行分析：
+- 我们可以发现第 N 行由两部分组成：N - 1 行的序列构成 N 行的左半部分，N - 1 行序列取反构成 N 行的右半部分。
+- 直接对上面的观察进行模拟会导致位运算溢出问题，下面考虑直接对第 K 位进行分析
 
+2. 对于第 N 行的第 K 个数，我们可以分析如下：
+- 第 N 行的长度为 2^(N-1)
+- 若 K <= N 行长度的一半 ，则其等于 N-1 行的第 K 个数
+- 反之，则其等于 N - 1 行的第 N - K 个数取反
+
+3. 基于上面的分析我们可以设计如下的递归算法：
+- 目标函数为输入 N 行 K 位直接输出该位的值，我们可以直接利用
+- 递归关系式就是上面分析的结论
+- 递归基选择了第一行和第二行的结果，共三种输出
+
+4. 算法如下：
+```
+class Solution {
+public:
+    int kthGrammar(int N, int K) {
+        if(N == 1) return 0;
+        if(N == 2) return K == 1? 0 : 1;
+        
+        // 计算上一行的长度（本行长度折半）
+        int prevLen = (1 << (N - 1)) / 2;
+        
+        if(K <= prevLen)
+            // 位于前半段，则等价于上一行同样位置的值
+            return kthGrammar(N-1, K);
+        else
+            // 位于后半段，则等价于上一行相应位置的值取反
+            // 返回值非 0 即 1，因此直接用 1 去减即可
+            return 1 - kthGrammar(N-1, K-prevLen);
+    }
+};
+```
 
 ## 04 核心代码
 
@@ -68,3 +179,4 @@
 
 ## 06 问题总结
 
+<https://leetcode-cn.com/problems/k-th-symbol-in-grammar/solution/di-gui-zhi-jie-fen-xi-di-n-xing-di-k-ge-shu-de-she/>
