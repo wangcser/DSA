@@ -34,24 +34,24 @@
 ### 3.1 C++
 
 ```c++
-//version 1.0 0.0%
-
-int binarySearch(vector<int>& nums, int target){
-  if(nums.size() == 0)
-    return -1;
-
-  int left = 0, right = nums.size() - 1;
-  while(left <= right){
-    // Prevent (left + right) overflow
-    int mid = left + (right - left) / 2;
-    if(nums[mid] == target){ return mid; }
-    else if(nums[mid] < target) { left = mid + 1; }
-    else { right = mid - 1; }
-  }
-
-  // End Condition: left > right
-  return -1;
-}
+class Solution {
+public:
+    int mySqrt(int x) {
+        if(x < 0) return -1;
+        
+        int l = 0, r = x;
+        int target = (int) sqrt(x);
+        
+        while(l <= r) {
+            int mid = l + (r - l) / 2;
+            if(mid == target) return mid;
+            else if(mid < target) l = mid + 1;
+            else r = mid - 1;
+        }
+        
+        return -1;
+    }
+};
 ```
 
 ### 3.2 Python 3
