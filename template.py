@@ -8,7 +8,7 @@ def template(md_name):
     md_path = "./" + file_name
 
     # read template
-    with open("./DSA-template-1.0.md", 'r') as f:
+    with open("./DSA-template-2.0.md", 'r') as f:
         md_body = f.read()
 
     # write template
