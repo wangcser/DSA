@@ -24,6 +24,20 @@
   - 时间：O(nlogn + k)
   - 空间： O(1)
 
+```c++
+class Solution {
+public:
+    vector<int> GetLeastNumbers_Solution(vector<int> input, int k) {
+        if(k > input.size()) return vector<int>();
+        sort(input.begin(), input.end());
+        vector<int> ans(input.begin(), input.begin() + k);
+        return ans;
+    }
+};
+```
+
+
+
 ### 3.2 优化
 
 #### 类最大堆
