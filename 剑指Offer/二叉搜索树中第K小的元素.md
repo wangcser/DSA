@@ -97,6 +97,49 @@ public:
 
 
 
+- 牛客网
+
+```c++
+/*
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+    TreeNode(int x) :
+            val(x), left(NULL), right(NULL) {
+    }
+};
+*/
+class Solution {
+public:
+    TreeNode* KthNode(TreeNode* pRoot, int k) {
+        
+        inorder(pRoot, k);
+        
+        return ans;
+    }
+
+    void inorder(TreeNode* root, int k) {
+        if(root == nullptr) return;
+
+        inorder(root->left, k);
+        
+        count++;
+        if(count == k) {
+            ans = root;
+            return;
+        } 
+
+        inorder(root->right, k);
+    }
+private:
+    int count = 0;
+    TreeNode* ans = nullptr;
+};
+```
+
+
+
 ## 05 算法效率分析
 
 
