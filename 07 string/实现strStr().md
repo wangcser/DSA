@@ -1,6 +1,8 @@
 # 实现strStr()  
 
-> Author：ID.9276
+问题关键词：
+
+- 字符串匹配
 
 ## 01 题目
 
@@ -26,7 +28,7 @@
 
 当 `needle` 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
 
-对于本题而言，当 `needle` 是空字符串时我们应当返回 0 。这与C语言的 [strstr()](https://baike.baidu.com/item/strstr/811469) 以及 Java的 [indexOf()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)) 定义相符。
+对于本题而言，当 `needle` 是**空字符串时我们应当返回 0** 。这与C语言的 [strstr()](https://baike.baidu.com/item/strstr/811469) 以及 Java的 [indexOf()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)) 定义相符。
 
 ## 02 分析
 
@@ -34,7 +36,7 @@
 
 ## 03 题解
 
-### 3.1 C++
+### 基础：穷举匹配（注意游标）
 
 ```c++
 // version 1.0 17.73%
@@ -64,24 +66,6 @@ public:
     }
 };
 ```
-
-
-
-### 3.2 Python 3
-
-```python
-# version 1.0 
-
-```
-
-### 3.3 Java
-
-```java
-// version 1.0
-
-```
-
-
 
 ## 04 总结
 

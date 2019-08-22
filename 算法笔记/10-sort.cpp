@@ -5,7 +5,7 @@ vector<int> selectSort(vector<int> nums) {
         
         // 比较
         int min = i;
-        // 
+        // 选择后区间中的最小元素加入有序区间的尾部
         for(int j = i + 1; j < nums.size(); j++) {
             if(a[min] > a[j]) min = j;
         }
@@ -183,7 +183,7 @@ vector<int> partition(vector<int>& nums, int l, int r) {
     return j;
 }
 
-vector<int> headSort(vector<int> nums) {
+vector<int> heapSort(vector<int> nums) {
     // 建堆
     for(int i = (nums.size() - 2) / 2; i >= 0; i--) {
         downAdjust(nums, i, n - 1);
