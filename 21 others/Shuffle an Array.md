@@ -1,10 +1,12 @@
 # Shuffle an Array 
 
-> Author：ID.9276
+关键词：
+
+- 随机
 
 ## 01 题目
 
-打乱一个没有重复元素的数组。
+打乱一个**没有重复**元素的数组。
 
 **示例:**
 
@@ -29,7 +31,7 @@ solution.shuffle();
 
 ## 03 题解
 
-### 3.1 C++
+### 基础 ：向后随机交换法
 
 ```c++
 // version 1.0 29.40%
@@ -67,24 +69,6 @@ private:
  * vector<int> param_2 = obj.shuffle();
  */
 ```
-
-
-
-### 3.2 Python 3
-
-```python
-# version 1.0 
-
-```
-
-### 3.3 Java
-
-```java
-// version 1.0
-
-```
-
-
 
 ## 04 总结
 

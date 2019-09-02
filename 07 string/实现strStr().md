@@ -38,6 +38,9 @@
 
 ### 基础：穷举匹配（注意游标）
 
+- 对目标串中的每一个从左到右的子串进行匹配
+- 匹配串用完时结束匹配
+
 ```c++
 // version 1.0 17.73%
 
@@ -67,5 +70,26 @@ public:
 };
 ```
 
+### 优化：使用 CPP string 的方法
+
+```c++
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+
+        auto index = haystack.find(needle);
+        if(index == std::string::npos) return -1;
+        
+        return index;
+    }
+};
+```
+
+>   //在str当中查找第一个出现的needle，找到则返回出现的位置，否则返回结尾
+>     std::size_t found = str.find(str2);
+>     if (found!=std::string::npos)
+>     std::cout << "first 'needle' found at: " << found << '\n';
+
 ## 04 总结
 
+- 可以改进为 KMP 算法

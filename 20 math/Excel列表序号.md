@@ -1,6 +1,8 @@
-# 求众数
+# Excel 列表序号
 
-> Author ID.9276
+关键词：
+
+- 进制转换
 
 ## 01 题目
 
@@ -52,7 +54,7 @@
 
 ## 03 题解
 
-### 3.1 C++
+### 基础
 
 ```c++
 class Solution {
@@ -73,46 +75,6 @@ public:
     }
 };
 ```
-
-
-
-```c++
-class Solution {
-public:
-    int majorityElement(vector<int>& nums) {
-        
-        int c = 0, m = 0;
-        
-        for(int i = 0; i < nums.size(); i++) {
-            
-            if(c == 0) m = nums[i];
-            
-            if(nums[i] == m) c++;
-            else c--;
-        }
-        
-        return m;
-    }
-};
-```
-
-
-
-### 3.2 Python 3
-
-```python
-# version 1.0 0.0%
-
-```
-
-### 3.3 Go
-
-```Go
-//version 1.0 0.0%
-
-```
-
-
 
 ## 04 总结
 

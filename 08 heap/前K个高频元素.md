@@ -1,5 +1,7 @@
 # 前K个高频元素
-> Author ID.9276
+关键词：
+
+- topK
 
 ## 01 题目
 
@@ -32,7 +34,7 @@
 
 ## 03 题解
 
-### 3.1 C++
+### 基础：小顶堆
 
 ```c++
 class Solution {
@@ -46,6 +48,7 @@ public:
         
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
         // pq sort the item by the first index, so must store freq in first index.
+        // this is min heap
         
         for(auto it : freq) {
             if(pq.size() == k) {
@@ -67,22 +70,6 @@ public:
     }
 };
 ```
-
-### 3.2 Python 3
-
-```python
-# version 1.0 0.0%
-
-```
-
-### 3.3 Go
-
-```Go
-//version 1.0 0.0%
-
-```
-
-
 
 ## 04 总结
 

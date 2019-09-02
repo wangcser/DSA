@@ -1,5 +1,8 @@
 # TinyURL加密与解密
-> Author ID.9276
+关键词：
+
+- 设计
+- 编码与解码
 
 ## 01 题目
 
@@ -13,7 +16,7 @@ TinyURL是一种URL简化服务， 比如：当你输入一个URL `https://leetc
 
 ## 03 题解
 
-### 3.1 C++
+### 基础
 
 ```c++
 //version 1.0 0.0%
@@ -35,22 +38,6 @@ public:
 // Solution solution;
 // solution.decode(solution.encode(url));
 ```
-
-### 3.2 Python 3
-
-```python
-# version 1.0 0.0%
-
-```
-
-### 3.3 Go
-
-```Go
-//version 1.0 0.0%
-
-```
-
-
 
 ## 04 总结
 

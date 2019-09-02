@@ -1,9 +1,7 @@
 # 第k个语法符号
-> Author ID.9276 
-
 **问题关键词：**
 
-- 
+- 递归
 
 ## 01 题目
 
@@ -52,9 +50,9 @@
 
 - 当前行由上一行及其取反行组成
 
-## 03 解题思路
+## 03 题解
 
-### 3.1 基础思路
+### 基础
 
 #### 数的规模，模拟
 
@@ -165,18 +163,6 @@ public:
 };
 ```
 
-## 04 核心代码
-
-```c++
-
-```
-
-
-
-## 05 算法效率分析
-
-
-
-## 06 问题总结
+## 04 总结
 
 <https://leetcode-cn.com/problems/k-th-symbol-in-grammar/solution/di-gui-zhi-jie-fen-xi-di-n-xing-di-k-ge-shu-de-she/>

@@ -1,5 +1,8 @@
 # 最接近原点的K个点
-> Author ID.9276
+关键词：
+
+- topK
+- sort
 
 ## 01 题目
 
@@ -50,7 +53,7 @@
 
 方法一，使用排序，借助 lambda 函数定义比较函数
 
-在新的 exp 上 timeout 啦
+> 在新的 exp 上 timeout 啦
 
 ```c++
 //version 1.0 0.0%
@@ -72,7 +75,7 @@ public:
 };
 ```
 
-优化一下复制机制
+优化一下复制机制，将 lambda 替换为比较函数
 
 ```
 class Solution {
@@ -88,24 +91,6 @@ public:
     }
 };
 ```
-
-
-
-### 3.2 Python 3
-
-```python
-# version 1.0 0.0%
-
-```
-
-### 3.3 Go
-
-```Go
-//version 1.0 0.0%
-
-```
-
-
 
 ## 04 总结
 
