@@ -1,10 +1,10 @@
 # DSA Notes
 
-This repo. use to record my algo. notes in leetcode, OJs and DSA lessons.
+This repo. is my algorithm notes about OJs and DSA lessons.
 
-## 1. DSA 分类与目录结构
+## 1. DSA Notes Structure
 
-According to algorithm design and algorithm analysis technicals, i group my notes in those orders as follow:
+According to algorithm design and algorithm analysis technicals, i group my notes in those folders as follows:
 
 0. AlgoNotes：算法笔记
 1. bit：位运算
@@ -29,9 +29,16 @@ According to algorithm design and algorithm analysis technicals, i group my note
 20. math：数学问题
 21. others：其他问题
 
-## 2. 题解模板与脚本
+## 2. Template and Script
 
-The python script use to generate note-template!
+The python script use to generate note-template in `.md` file:
 
-1. you can attach the file name behind the running script
+1. you can attach the file name behind the running script as args;
 2. you can change the file directory in script.
+
+## 3. Project Plan
+
+I just use 3 months to finished the review task of basic algorithm, and use one more month to conclude my algorithm notes. I think its time to step forward and go to the next stage, follows are my plans.
+
+1. practice makes prefect. consistence improvement will give me a better understanding of my work.
+2. learn more algorithm and skills. make my tiny ropo. more consolidation.
