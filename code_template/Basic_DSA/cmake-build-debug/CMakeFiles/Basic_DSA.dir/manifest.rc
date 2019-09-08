@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "E:/Leetcode/code_template/Basic_DSA/cmake-build-debug/CMakeFiles/Basic_DSA.dir/embed.manifest"
